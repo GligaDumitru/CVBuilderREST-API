@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #documentCV {
+            top: 0;
+            min-width: 794px;
+            max-width: 794px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            background: rgb(240, 237, 237);
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hd {
+            height: 150px;
+            overflow: hidden;
+            border: 1px solid #000;
+            width: 400px;
+            position: relative;
+            left: -30%;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+        .profile {
+            width: 30%;
+            float: left;
+            height: inherit;
+        }
+
+        .profile .imageProfile {
+            width: 80%;
+            margin: auto;
+
+            margin-top: 25px;
+        }
+
+        .profile .imageProfile img {
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12),
+                0 8px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .singleItem {
+            width: 18%;
+            height: 5px;
+            border-radius: 10px;
+            background: rgb(219, 214, 214);
+            float: left;
+            margin-right: 2%;
+        }
+
+        .score.one :first-child {
+            background: #000;
+        }
+
+        .score.one :first-child {
+            background: #000;
+        }
+
+        .score.five .singleItem {
+            background: #000;
+        }
+
+        .score.two :nth-child(1),
+        .score.two :nth-child(2) {
+            background: #000;
+        }
+
+        .score.three :nth-child(1),
+        .score.three :nth-child(3),
+        .score.three :nth-child(2) {
+            background: #000;
+        }
+
+        .score.four :nth-child(1),
+        .score.four :nth-child(3),
+        .score.four :nth-child(4),
+        .score.four :nth-child(2) {
+            background: #000;
+        }
+
+        .person {
+            height: inherit;
+            width: 60%;
+            float: left;
+        }
+
+        .jobAndFirm .jobTitle,
+        .jobAndFirm .employer {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+
+        .duration {
+            color: #555;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .descriptionDetails {
+            padding-left: 20px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+        }
+
+        .name .personName {
+            margin-top: 25px;
+            font-size: 2rem;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1.1;
+            margin-left: 10px;
+        }
+
+        .name .personJobTitle {
+            font-size: 1.5rem;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            letter-spacing: 1.1;
+            margin-left: 10px;
+        }
+
+        .titleSection {
+            text-transform: uppercase;
+            border-bottom: 4px solid #555;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            font-size: 1.5rem;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .informationTitle {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        }
+
+        .informationDescription {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        .bd .left {
+            min-width: 40%;
+            max-width: 40%;
+            min-height: 800px;
+            width: 40%;
+            float: left;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 20px;
+
+            padding-top: 200px;
+            box-sizing: border-box;
+        }
+
+        .bd .right {
+            background: #fff;
+            min-width: 60%;
+            max-width: 60%;
+            width: 60%;
+            float: left;
+            box-sizing: content-box;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            .informationWithDetails {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="documentCV">
+        <div class="bd">
+            <aside class="left">
+                <div class="titleSection">
+                    Info
+                </div>
+                <div class="informationTitle">
+                    Address
+                </div>
+                <p class="informationDescription">
+                    Str.Sucidava Nr.9
+                </p>
+                <div class="informationTitle">
+                    Phone
+                </div>
+                <p class="informationDescription">
+                    0759149338
+                </p>
+                <div class="informationTitle">
+                    Email
+                </div>
+                <p class="informationDescription">
+                    gliga_dumitru@yahoo.com
+                </p>
+                <div class="titleSection">
+                    Skills
+                </div>
+                <p class="informationDescription">
+                    React
+                </p>
+                <div class="score one">
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                </div>
+                <p class="informationDescription">
+                    React
+                </p>
+                <div class="score two">
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                </div>
+                <p class="informationDescription">
+                    React
+                </p>
+                <div class="score three">
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                </div>
+                <p class="informationDescription">
+                    React
+                </p>
+                <div class="score four">
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                </div>
+                <p class="informationDescription">
+                    React
+                </p>
+                <div class="score five">
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                    <div class="singleItem"></div>
+                </div>
+            </aside>
+            <aside class="right">
+                <div class="hd">
+                    <div class="profile">
+                        <div class="imageProfile">
+                            <img src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4.png"
+                                alt="a" />
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="name">
+                            <div class="personName">
+                                Gliga Dumitru
+                            </div>
+                            <div class="personJobTitle">
+                                Junior Programmer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="titleSection">
+                    Profile
+                </div>
+                <p class="informationDescription">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text
+                    ever since the 1500s,
+                </p>
+                <div class="titleSection">
+                    Education
+                </div>
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                Bachelor of Marketing
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                Colorado College
+                            </span>
+                        </div>
+                        <div class="location">
+                            Iasi, Romania
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">Nov,2014</span>
+                        <span> - </span>
+                        <span class="endDate">Nov,2018</span>
+                    </div>
+                </div>
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                Bachelor of Marketing
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                Colorado College
+                            </span>
+                        </div>
+                        <div class="location">
+                            Iasi, Romania
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">Nov,2014</span>
+                        <span> - </span>
+                        <span class="endDate">Nov,2018</span>
+                    </div>
+                </div>
+
+                <div class="titleSection">
+                    Employment History
+                </div>
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                Sales Manager
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                Endava
+                            </span>
+                        </div>
+                        <div class="location">
+                            Iasi, Romania
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">Nov,2014</span>
+                        <span> - </span>
+                        <span class="endDate">Nov,2014</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        But I must explain to you how all this mistaken idea of denouncing
+                        pleasure and praising pain was born and I will give you a complete
+                        account of the system, and expound the actual teachings of the
+                        great explorer of the truth, the master-builder of human
+                        happiness. No one rejects, dislikes, or avoids pleasure itself,
+                        because it is pleasure, but because those who do not know how to
+                        pursue pleasure rationally encounter consequences that are
+                        extremely painful. Nor again is there anyone who loves or pursues
+                        or desires to obtain pain of itself, because it is pain, but
+                        because occasionally circumstances occur in which toil and pain
+                        can procure him some great pleasure.
+                    </div>
+                </div>
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                Sales Manager
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                Endava
+                            </span>
+                        </div>
+                        <div class="location">
+                            Iasi, Romania
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">Nov,2014</span>
+                        <span> - </span>
+                        <span class="endDate">Nov,2014</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        But I must explain to you how all this mistaken idea of denouncing
+                        pleasure and praising pain was born and I will give you a complete
+                        account of the system, and expound the actual teachings of the
+                        great explorer of the truth, the master-builder of human
+                        happiness. No one rejects, dislikes, or avoids pleasure itself,
+                        because it is pleasure, but because those who do not know how to
+                        pursue pleasure rationally encounter consequences that are
+                        extremely painful. Nor again is there anyone who loves or pursues
+                        or desires to obtain pain of itself, because it is pain, but
+                        because occasionally circumstances occur in which toil and pain
+                        can procure him some great pleasure.
+                    </div>
+                </div>
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                Sales Manager
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                Endava
+                            </span>
+                        </div>
+                        <div class="location">
+                            Iasi, Romania
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">Nov,2014</span>
+                        <span> - </span>
+                        <span class="endDate">Nov,2014</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        But I must explain to you how all this mistaken idea of denouncing
+                        pleasure and praising pain was born and I will give you a complete
+                        account of the system, and expound the actual teachings of the
+                        great explorer of the truth, the master-builder of human
+                        happiness. No one rejects, dislikes, or avoids pleasure itself,
+                        because it is pleasure, but because those who do not know how to
+                        pursue pleasure rationally encounter consequences that are
+                        extremely painful. Nor again is there anyone who loves or pursues
+                        or desires to obtain pain of itself, because it is pain, but
+                        because occasionally circumstances occur in which toil and pain
+                        can procure him some great pleasure.
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <div class="ft"></div>
+    </div>
+</body>
+
+</html>

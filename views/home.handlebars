@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #documentCV {
+            top: 0;
+            min-width: 794px;
+            max-width: 794px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .languageSection .left,
+        .languageSection .titleSection,
+        .languageSection .right {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .left .titleSection.normal {
+            text-transform: capitalize;
+        }
+
+        .languageRow {
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .languageRow .lang {
+            border: 2px solid rgb(5, 119, 172);
+            float: left;
+            width: calc(33.3% - 4px);
+        }
+
+        .languageRow .language {
+            float: left;
+            width: calc(33.3% - 4px);
+            border: 2px solid rgb(5, 119, 172);
+        }
+
+        .languageRow .lang.first {
+            border-left: 2px solid transparent;
+        }
+
+        .languageRow .lang.last {
+            border-right: 2px solid transparent;
+        }
+
+        .languageSectionSelectedLanguage .left,
+        .languageSectionSelectedLanguage .titleSection,
+        .languageSectionSelectedLanguage .languageRow,
+        .languageSectionSelectedLanguage .right {
+            margin: 0;
+            padding: 0;
+        }
+
+        .languageSectionSelectedLanguage .left {
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .languageDescriptions {
+            width: 100%;
+            text-align: center;
+            background: rgb(184, 182, 182);
+            clear: both;
+        }
+
+        .bd .sectionInfo {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .bd .sectionInfo .left,
+        .bd .sectionInfo .right {
+            float: left;
+        }
+
+        .bd .left {
+            min-width: 30%;
+            max-width: 30%;
+            min-height: 800px;
+            width: 30%;
+            float: left;
+            box-sizing: content-box;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: right;
+            min-height: 50px;
+        }
+
+        .bd .right {
+            min-width: 70%;
+            max-width: 70%;
+            width: 70%;
+            float: left;
+            box-sizing: content-box;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 10px;
+            box-sizing: border-box;
+            min-height: 50px;
+        }
+
+        .europassText {
+            color: rgb(5, 119, 172);
+        }
+
+        .titleSection {
+            text-transform: uppercase;
+            color: rgb(4, 68, 153);
+        }
+
+        .dividerBar .leftDivider {
+            float: left;
+            min-width: calc(100% - 8px);
+            width: max-content;
+            display: block;
+            min-height: 30px;
+            background: transparent;
+            border-bottom: 2px solid rgb(5, 119, 172);
+        }
+
+        .dividerBar .rightDivider {
+            display: block;
+            margin-top: 22px;
+            float: left;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid rgb(5, 119, 172);
+            background: rgb(5, 119, 172);
+        }
+
+        .detailsInfo {}
+
+        .detailsInfo .icon {
+            width: 20px;
+            overflow: hidden;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .detailsInfo .informations {
+            float: left;
+            width: calc(100% - 25px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="documentCV">
+        <div class="bd">
+            <div class="sectionInfo">
+                <div class="left">
+                    <img src="https://seeklogo.com/images/E/Europass-logo-FD8525DD34-seeklogo.com.png" alt="europass" />
+                </div>
+                <div class="right">
+                    <span class="europassText">
+                        Curriculum Vitae
+                    </span>
+                </div>
+            </div>
+            <div class="sectionInfo">
+                <div class="left">
+                    <p class="titleSection">
+                        Personal Information
+                    </p>
+                </div>
+                <div class="right">
+                    <p>{{{data.personalDetails.firstName}}} {{{data.personalDetails.lastName}}} </p>
+                </div>
+            </div>
+
+            <div class="sectionInfo">
+                <div class="left">
+                    <img src={{{data.personalDetails.imageLink}}} alt="europass" width="150px" />
+                </div>
+                <div class="right">
+                    <div class="detailsInfo">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+
+                    </div>
+                    <div class="informations">
+                        <span>
+                            Iasi, Rp
+                        </span>
+                    </div>
+                </div>
+                <div class="detailsInfo">
+                    <div class="icon">
+                        <i class="fas fa-phone-square"></i>
+                    </div>
+                    <div class="informations">
+                        0759149338
+                    </div>
+                </div>
+                <div class="detailsInfo">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="informations">
+                        <span> {{{data.personalDetails.email}}} </span>
+                    </div>
+                </div>
+                {{#if data.utilLinks}}
+                {{#each data.utilLinks}}
+                <div className="detailsInfo">
+                    <div className="icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div className="informations">
+                        <span> {{this.name}} - {{this.link}} </span>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+
+                <div class="detailsInfo part2">
+                    <span class="europassText">
+                        Sex
+                    </span>
+                    <span> {{data.personalDetails.gender}} </span>
+                    <span class="europassText">
+                        | Date of Birth
+                    </span>
+                    <span> {{{data.personalDetails.dateOfBirth}}} </span>
+                    <span class="europassText">
+                        | Nationality
+                    </span>
+                    <span> {{{data.personalDetails.nationality}}} </span>
+
+                </div>
+            </div>
+        </div>
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Preferred job
+                </p>
+            </div>
+            <div class="right">
+                <p> {{{data.personalDetails.jobTitle}}} </p>
+            </div>
+        </div>
+        {{#if data.employmentHistory}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Work Experience
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.employmentHistory}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.startDate}} - {{this.endDate}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.jobTitle}},{{this.employer}}
+                </p>
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if data.educationHistory}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Education History
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.educationHistory}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.startDate}} - {{this.endDate}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.degree}},{{this.school}},{{this.city}}
+                </p>
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if data.internships}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Internships
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.internships}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.startDate}} - {{this.endDate}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.jobTitle}},{{this.employer}}
+                </p>
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{!-- Projects --}}
+
+        {{#if data.projects}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Projects
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.projects}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.projectName}}
+                </p>
+            </div>
+            <div class="right">
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{!-- /Projects --}}
+
+        {{#if data.courses}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Courses
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.courses}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.startDate}} - {{this.endDate}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.name}},{{this.institution}}
+                </p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Personal Skills
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+
+
+        {{#if data.personalDetails.motherLanguages}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Mother tonque(s)
+                </p>
+            </div>
+            <div class="right">
+                <p>
+                    {{data.personalDetails.motherLanguages}}
+                </p>
+
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="sectionInfo languageSection">
+            <div class="left">
+                <p class="titleSection">
+                    Other language(s)
+                </p>
+            </div>
+            <div class="right">
+                <div class="otherLanguages">
+                    <div class="languageRow">
+                        <div class="lang first">
+                            Understanding
+                        </div>
+                        <div class="lang">
+                            Speaking
+                        </div>
+                        <div class="lang last">
+                            Writing
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        {{#if data.languages}}
+        {{#each data.languages}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection language nomal">
+                    {{this.name}}
+                </p>
+            </div>
+            <div class="right">
+                <div class="languageRow">
+                    <div class="language">
+                        {{this.understandingLevel}}
+                    </div>
+                    <div class="language">
+                        {{this.speakingLevel}}
+                    </div>
+                    <div class="language">
+                        {{this.writingLevel}}
+                    </div>
+                </div>
+                <div class="languageDescriptions">
+                    {{this.languageDescription}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if data.skills}}
+        {{#each data.skills}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection language normal">
+                    {{this.name}}
+                </p>
+            </div>
+            <div class="right">
+                <p>
+                    {{this.description}}
+                </p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        {{#if data.references}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    References
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.references}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.name}} - {{this.phone}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.company}},{{this.email}}
+                </p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if data.customSections}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Others
+                </p>
+            </div>
+            <div class="right">
+                <div class="dividerBar">
+                    <div class="leftDivider"></div>
+                    <div class="rightDivider"></div>
+                </div>
+            </div>
+        </div>
+        {{#each data.customSections}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    {{this.startDate}} - {{this.endDate}}
+                </p>
+            </div>
+            <div class="right">
+                <p class="titleSection">
+                    {{this.jobTitle}},{{this.city}}
+                </p>
+                <p>{{{this.description}}}</p>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#if data.yourHobbies.description}}
+        <div class="sectionInfo">
+            <div class="left">
+                <p class="titleSection">
+                    Hobbies
+                </p>
+            </div>
+            <div class="right">
+                <p>{{{yourHobbies.description}}}</p>
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+    </div>
+</body>
+
+</html>

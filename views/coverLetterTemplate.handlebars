@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #documentCV {
+            top: 0;
+            min-width: 794px;
+            max-width: 794px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        .bodyContent {
+            display: block;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 1.2em;
+            color: rgb(24, 23, 23);
+            line-height: 1.5;
+        }
+
+        .letterD .headerContent {
+            text-align: center;
+        }
+
+        .letterD .fullName {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: "Prompt", sans-serif;
+        }
+
+        .letterD .details {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            padding-top: 0;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: "Prompt", sans-serif;
+
+
+        }
+
+        .letterD .details .phone {
+            padding: 0 10px;
+        }
+
+        .letterD .details .detailsInfo {
+            display: block;
+            margin: 5px;
+        }
+
+        .letterC .headerContent {
+            text-align: left;
+        }
+
+        .letterC .fullName {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .letterC .details {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+            font-family: "Libre Baskerville", serif;
+            background: rgb(240, 238, 238);
+        }
+
+        .letterC .detailsInfo {
+            margin: 5px;
+        }
+
+        .letterC .phone {
+            padding: 0 10px;
+        }
+
+        .letterB .headerContent {
+            text-align: left;
+            background: rgb(240, 238, 238);
+        }
+
+        .letterB .fullName {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .letterB .details {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 20px 20px;
+            box-sizing: border-box;
+            text-align: left;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .letterB .detailsInfo {
+            margin: 5px;
+        }
+
+        .letterB .phone {
+            padding: 0 10px;
+            border-left: 1px solid #555;
+            border-right: 1px solid #555;
+        }
+
+        .letterA .headerContent {
+            text-align: center;
+            border-bottom: 4px solid #555;
+        }
+
+        .letterA .fullName {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .letterA .details {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 20px 0;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: "Libre Baskerville", serif;
+        }
+
+        .letterA .detailsInfo {
+            margin: 5px;
+        }
+
+        .letterA .phone {
+            padding: 0 10px;
+            border-left: 1px solid #555;
+            border-right: 1px solid #555;
+        }
+
+        b,
+        strong {
+            font: bold 1.2em 'Roboto';
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body>
+    {{#when data.label 'eq' "letterA" }}
+    <div class="coverLetterTemplateVersionA letterA">
+        <div id="documentCV">
+            <div class="headerContent">
+                <div class="fullName">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="details">
+                    <span class="detailsInfo email">
+                        <i class="fas fa-envelope"></i> {{data.email}}
+                    </span>
+                    <span class="detailsInfo phone">
+                        <i class="fas fa-phone-alt"></i> {{data.phone}}
+                    </span>
+                    <span class="detailsInfo address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{data.address}} {{data.city}} {{data.country}}
+                    </span>
+                </div>
+            </div>
+            <div class="bodyContent">
+                <div class="descriptionLetter">
+                    {{{data.descriptionLetter}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/when}}
+    {{#when data.label 'eq' "letterB" }}
+    <div class="coverLetterTemplateVersionA letterB">
+        <div id="documentCV">
+            <div class="headerContent">
+                <div class="fullName">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="details">
+                    <span class="detailsInfo email">
+                        <i class="fas fa-envelope"></i> {{data.email}}
+                    </span>
+                    <span class="detailsInfo phone">
+                        <i class="fas fa-phone-alt"></i> {{data.phone}}
+                    </span>
+                    <span class="detailsInfo address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{data.address}} {{data.city}} {{data.country}}
+                    </span>
+                </div>
+            </div>
+            <div class="bodyContent">
+                <div class="descriptionLetter">
+                    {{{data.descriptionLetter}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/when}}
+    {{#when data.label 'eq' "letterC" }}
+    <div class="coverLetterTemplateVersionA letterC">
+        <div id="documentCV">
+            <div class="headerContent">
+                <div class="fullName">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="details">
+                    <span class="detailsInfo email">
+                        <i class="fas fa-envelope"></i> {{data.email}}
+                    </span>
+                    <span class="detailsInfo phone">
+                        <i class="fas fa-phone-alt"></i> {{data.phone}}
+                    </span>
+                    <span class="detailsInfo address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{data.address}} {{data.city}} {{data.country}}
+                    </span>
+                </div>
+            </div>
+            <div class="bodyContent">
+                <div class="descriptionLetter">
+                    {{{data.descriptionLetter}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/when}}
+    {{#when data.label 'eq' "letterD" }}
+    <div class="coverLetterTemplateVersionA letterD">
+        <div id="documentCV">
+            <div class="headerContent">
+                <div class="fullName">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="details">
+                    <span class="detailsInfo email">
+                        <i class="fas fa-envelope"></i> {{data.email}}
+                    </span>
+                    <span class="detailsInfo phone">
+                        <i class="fas fa-phone-alt"></i> {{data.phone}}
+                    </span>
+                    <span class="detailsInfo address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        {{data.address}} {{data.city}} {{data.country}}
+                    </span>
+                </div>
+            </div>
+            <div class="bodyContent">
+                <div class="descriptionLetter">
+                    {{{data.descriptionLetter}}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/when}}
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #documentCV {
+            top: 0;
+            min-width: 794px;
+            max-width: 794px;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            min-height: 1000px;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hd {
+            height: 150px;
+            overflow: hidden;
+            border: 1px solid #000;
+            width: 400px;
+            position: relative;
+            left: -30%;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+        .profile {
+            width: 30%;
+            float: left;
+            height: inherit;
+        }
+
+        .profile .imageProfile {
+            width: 80%;
+            margin: auto;
+
+            margin-top: 25px;
+        }
+
+        .profile .imageProfile img {
+            border-radius: 50%;
+            height: 100px;
+            box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12),
+                0 8px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .singleItem {
+            width: 18%;
+            height: 5px;
+            border-radius: 10px;
+            background: rgb(219, 214, 214);
+            float: left;
+            margin-right: 2%;
+        }
+
+        .score.one :first-child {
+            background: #000;
+        }
+
+        .score.one :first-child {
+            background: #000;
+        }
+
+        .score.five .singleItem {
+            background: #000;
+        }
+
+        .score.two :nth-child(1),
+        .score.two :nth-child(2) {
+            background: #000;
+        }
+
+        .score.three :nth-child(1),
+        .score.three :nth-child(3),
+        .score.three :nth-child(2) {
+            background: #000;
+        }
+
+        .score.four :nth-child(1),
+        .score.four :nth-child(3),
+        .score.four :nth-child(4),
+        .score.four :nth-child(2) {
+            background: #000;
+        }
+
+        .person {
+            height: inherit;
+            width: 60%;
+            float: left;
+        }
+
+        .jobAndFirm .jobTitle,
+        .jobAndFirm .employer {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            font: bold 1rem/1.5em "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+        }
+
+        .duration {
+            color: #555;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .descriptionDetails {
+            padding-left: 20px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+        }
+
+        .name .personName {
+            margin-top: 25px;
+            font-size: 2rem;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 1.1;
+            margin-left: 10px;
+        }
+
+        .name .personJobTitle {
+            font-size: 1.5rem;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            letter-spacing: 1.1;
+            margin-left: 10px;
+        }
+
+        .titleSection {
+            text-transform: uppercase;
+            border-bottom: 4px solid #555;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.5em;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+            font: bold 1.1rem/1.5em "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            margin-bottom: 10px;
+
+        }
+
+        .informationTitle {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+            font: bold 1rem/1.5em "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+        }
+
+        .informationDescription {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5em;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+
+        .bd .left {
+            min-width: 40%;
+            max-width: 40%;
+            min-height: 800px;
+            width: 40%;
+            float: left;
+            box-sizing: content-box;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 20px;
+            box-sizing: border-box;
+            padding-top: 200px;
+            background: rgb(240, 237, 237);
+
+        }
+
+        .bd .right {
+            min-width: 60%;
+            max-width: 60%;
+            width: 60%;
+            float: left;
+            box-sizing: content-box;
+            display: block;
+            overflow-wrap: break-word;
+            padding: 20px;
+            box-sizing: border-box;
+            background: rgb(255, 255, 255);
+            min-height: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="documentCV">
+        <div class="bd">
+            <aside class="left">
+                <div class="titleSection">
+                    Info
+                </div>
+                <div class="informationTitle">
+                    Address
+                </div>
+                <p class="informationDescription">
+                    {{{data.personalDetails.address}}},
+                    {{{data.personalDetails.city}}},
+                    {{{data.personalDetails.country}}},
+                    {{{data.personalDetails.postalCode}}}
+                </p>
+                <div class="informationTitle">
+                    Phone
+                </div>
+                <p class="informationDescription">
+                    {{{data.personalDetails.phone}}}
+                </p>
+                <div class="informationTitle">
+                    Email
+                </div>
+                <p class="informationDescription">
+                    {{{data.personalDetails.email}}}
+                </p>
+                <div class="informationTitle">
+                    Date Of Birth
+                </div>
+                <p class="informationDescription">
+                    {{{data.personalDetails.dateOfBirth}}}
+                </p>
+                <div class="informationTitle">
+                    Driving License
+                </div>
+                <p class="informationDescription">
+                    {{{data.personalDetails.drivingLicense}}}
+                </p>
+                {{#if utilLinks}}
+                <div class="titleSection">
+                    Links
+                </div>
+                {{/if}}
+                {{#if data.utilLinks}}
+                {{#each data.utilLinks}}
+                <div class="informationTitle">
+                    {{this.name}}
+                </div>
+                <p class="informationDescription">
+                    <a target="_blank" href={{this.link}}>{{this.link}}</a>
+                </p>
+                {{/each}}
+                {{/if}}
+                {{#if data.languages}}
+                <div class="titleSection">
+                    Languages
+                </div>
+                {{/if}}
+                {{#if data.languages}}
+                {{#each data.languages}}
+                <div class="informationTitle">
+                    {{this.name}}
+                </div>
+                <p class="informationDescription">
+                    {{this.grade}}
+                </p>
+                {{/each}}
+                {{/if}}
+                {{#if data.yourHobbies.description}}
+                <div class="informationTitle">
+                    Hobbies
+                </div>
+                <p class="informationDescription">
+                    {{data.yourHobbies.description}}
+                </p>
+                {{/if}}
+                {{#if data.skills}}
+                <div class="titleSection">
+                    Skills
+                </div>
+                <div>
+                    {{#each data.skills}}
+                    <p class="informationDescription skill">
+                        {{this.name}}
+                    </p>
+                    {{#when this.grade 'eq' 0}}
+                    <div class="score one">
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                    </div>
+                    {{/when}}
+                    {{#when this.grade 'eq' 25}}
+                    <div class="score two">
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                    </div>
+                    {{/when}}
+                    {{#when this.grade 'eq' 50}}
+                    <div class="score three">
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                    </div>
+                    {{/when}}
+                    {{#when this.grade 'eq' 75}}
+                    <div class="score four">
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                    </div>
+                    {{/when}}
+                    {{#when this.grade 'eq' 100}}
+                    <div class="score five">
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                        <div class="singleItem"></div>
+                    </div>
+                    {{/when}}
+                    {{/each}}
+                </div>
+                {{/if}}
+            </aside>
+            <aside class="right">
+                <div class="hd" style={background: 'red' ;}>
+                    <div class="profile">
+                        <div class="imageProfile">
+                            <img src={{{data.personalDetails.imageLink}}} alt="a" />
+                        </div>
+                    </div>
+                    <div class="person">
+                        <div class="name">
+                            <div class="personName">
+                                {{{data.personalDetails.firstName}}} {{{data.personalDetails.lastName}}}
+                            </div>
+                            <div class="personJobTitle">
+                                {{{data.personalDetails.jobTitle}}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{#if data.yourDescription.description}}
+                <div class="titleSection">
+                    Profile
+                </div>
+                <p class="informationDescription">
+                    {{{data.yourDescription.description}}}
+                </p>
+                {{/if}}
+                {{#if data.educationHistory}}
+                <div class="titleSection">
+                    Education
+                </div>
+                {{#each data.educationHistory}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.degree}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.school}}
+                            </span>
+                        </div>
+                        <div class="location">
+                            {{this.city}}
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.startDate}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.endDate}}</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        {{{this.description}}} </div>
+                </div>
+                {{/each}}
+                {{/if}}
+                {{#if data.internships}}
+                <div class="titleSection">
+                    Internships
+                </div>
+                {{#each data.internships}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.jobTitle}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.employer}}
+                            </span>
+                        </div>
+                        <div class="location">
+                            {{this.city}}
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.startDate}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.endDate}}</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        {{{this.description}}} </div>
+                </div>
+                {{/each}}
+                {{/if}}
+                {{#if data.employmentHistory}}
+                <div class="titleSection">
+                    Employment History
+                </div>
+                {{#each data.employmentHistory}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.jobTitle}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.employer}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.startDate}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.endDate}}</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        {{{this.description}}} </div>
+                </div>
+                {{/each}}
+                {{/if}}
+                {{#if data.courses}}
+                <div class="titleSection">
+                    Courses
+                </div>
+                {{#each data.courses}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.name}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.institution}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.startDate}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.endDate}}</span>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+                {{#if data.references}}
+                <div class="titleSection">
+                    References
+                </div>
+                {{#each data.references}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.name}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.company}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.email}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.phone}}</span>
+                    </div>
+                </div>
+                {{/each}}
+                {{/if}}
+                {{#if data.customSections}}
+                <div class="titleSection">
+                    Others
+                </div>
+                {{#each data.customSections}}
+                <div class="informationWithDetails">
+                    <div class="jobAndLocation">
+                        <div class="jobAndFirm">
+                            <span class="jobTitle">
+                                {{this.jobTitle}}
+                            </span>
+                            <span>, </span>
+                            <span class="employer">
+                                {{this.city}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="duration">
+                        <span class="startDate">{{this.startDate}}</span>
+                        <span> - </span>
+                        <span class="endDate">{{this.endDate}}</span>
+                    </div>
+                    <div class="descriptionDetails">
+                        {{{this.description}}} </div>
+                </div>
+                {{/each}}
+                {{/if}}
+            </aside>
+        </div>
+        <div class="ft">
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

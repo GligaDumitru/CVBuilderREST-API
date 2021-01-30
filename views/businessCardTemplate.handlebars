@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #documentCV {
+            top: 0;
+            min-width: 550px;
+            max-width: 550px;
+            min-height: 300px;
+            max-height: 300px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .bd {
+            overflow: hidden;
+            min-width: 550px;
+            max-width: 550px;
+            min-height: 300px;
+            max-height: 300px;
+            background-size: cover;
+            height: 300px;
+        }
+
+        .bd .name {
+            margin-top: 20px;
+        }
+
+        .bd .logo {
+            height: 300px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .bd .logo img {
+            box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12),
+                0 8px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        .bd .logo.imageIn img {
+            max-width: 200px;
+            max-height: 300px;
+            vertical-align: middle;
+        }
+
+
+        img {
+            background: #3A6F9A;
+            vertical-align: middle;
+            max-width: 160px;
+        }
+
+        .bd .defaultText {
+            line-height: 1.2em;
+            font-weight: 700;
+            font-size: 2em;
+            letter-spacing: -1px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .bd .position {
+            font-weight: 500;
+            font-size: 1.5em;
+            margin-bottom: 50px;
+        }
+
+        .bd .organization {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        .bd .address,
+        .bd .email,
+        .bd .website,
+        .bd .phone {
+            font-size: 1.4em;
+            font-weight: 400;
+            line-height: 1em;
+            letter-spacing: 0;
+        }
+
+        .bd .phone {
+            margin-bottom: 20px;
+        }
+
+        .bd .left {
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: inherit;
+        }
+
+        .bd .right {
+            float: left;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    {{#when data.label 'eq' "categoryB" }}
+    <div id="documentCV">
+        <div class="bd" style="background-image: url({{{data.textBackgroundColor}}});color:{{{data.textColor}}}">
+            {{#when data.typeOfBusinessCard 'eq' "color" }}
+            <aside class="left" style="background-color: {{{data.leftBackgroundColor}}};">
+                {{#if data.imageLink}}
+                <div class="logo imageIn">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+                {{#if data.qrCodeTextImg}}
+                <div class="logo qrCode">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.qrCodeTextImg}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+            </aside>
+            {{/when}}
+
+
+            {{#when data.typeOfBusinessCard 'eq' "image" }}
+            <aside class="left" style="background-image: url({{{data.image}}})">
+                {{#if data.imageLink}}
+                <div class="logo imageIn">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+                {{#if data.qrCodeTextImg}}
+                <div class="logo qrCode">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.qrCodeTextImg}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+            </aside>
+            {{/when}}
+
+            <aside class="right">
+                <div class="defaultText name">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="defaultText position">
+                    <span>
+                        {{data.jobTitle}}
+                    </span>
+                </div>
+                <div class="defaultText organization">
+                    <span>
+                        {{data.companyName}}
+                    </span>
+                </div>
+                <div class="defaultText address">
+                    <span>
+                        {{data.address}},{{data.city}}, {{data.country}}
+                    </span>
+                </div>
+                <div class="defaultText phone">
+                    <span>
+                        {{data.phone}}
+                    </span>
+                </div>
+                <div class="defaultText email">
+                    <span>
+                        {{data.email}}
+                    </span>
+                </div>
+                <div class="defaultText website">
+                    <span>
+                        {{data.website}}
+                    </span>
+                </div>
+            </aside>
+        </div>
+    </div>
+    {{/when}}
+
+
+    {{#when data.label 'eq' "categoryA" }}
+    <div id="documentCV">
+        {{#when data.typeOfBusinessCard 'eq' "color" }}
+        <div class="bd" style="background-color: url({{{data.leftBackgroundColor}}});color:{{{data.textColor}}}">
+            <aside class="left">
+                {{#if data.imageLink}}
+                <div class="logo imageIn">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+                {{#if data.qrCodeTextImg}}
+                <div class="logo qrCode">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+            </aside>
+            <aside class="right">
+                <div class="defaultText name">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="defaultText position">
+                    <span>
+                        {{data.jobTitle}}
+                    </span>
+                </div>
+                <div class="defaultText organization">
+                    <span>
+                        {{data.companyName}}
+                    </span>
+                </div>
+                <div class="defaultText address">
+                    <span>
+                        {{data.address}},{{data.city}}, {{data.country}}
+                    </span>
+                </div>
+                <div class="defaultText phone">
+                    <span>
+                        {{data.phone}}
+                    </span>
+                </div>
+                <div class="defaultText email">
+                    <span>
+                        {{data.email}}
+                    </span>
+                </div>
+                <div class="defaultText website">
+                    <span>
+                        {{data.website}}
+                    </span>
+                </div>
+            </aside>
+        </div>
+        {{/when}}
+
+        {{#when data.typeOfBusinessCard 'eq' "image" }}
+        <div class="bd" style="background-image: url({{{data.image}}});color:{{{data.textColor}}}">
+            <aside class="left">
+                {{#if data.imageLink}}
+                <div class="logo imageIn">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+                {{#if data.qrCodeTextImg}}
+                <div class="logo qrCode">
+                    <span class="helper"></span>
+                    {{#if data.imageLink}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                    {{#if data.qrCodeTextImg}}
+                    <img src={{data.imageLink}} alt="" />
+                    {{/if}}
+                </div>
+                {{/if}}
+            </aside>
+            <aside class="right">
+                <div class="defaultText name">
+                    <span>
+                        {{data.name}}
+                    </span>
+                </div>
+                <div class="defaultText position">
+                    <span>
+                        {{data.jobTitle}}
+                    </span>
+                </div>
+                <div class="defaultText organization">
+                    <span>
+                        {{data.companyName}}
+                    </span>
+                </div>
+                <div class="defaultText address">
+                    <span>
+                        {{data.address}},{{data.city}}, {{data.country}}
+                    </span>
+                </div>
+                <div class="defaultText phone">
+                    <span>
+                        {{data.phone}}
+                    </span>
+                </div>
+                <div class="defaultText email">
+                    <span>
+                        {{data.email}}
+                    </span>
+                </div>
+                <div class="defaultText website">
+                    <span>
+                        {{data.website}}
+                    </span>
+                </div>
+            </aside>
+        </div>
+        {{/when}}
+    </div>
+    {{/when}}
+</body>
+
+</html>
