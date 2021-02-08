@@ -30,6 +30,7 @@ module.exports = (passport) => {
         passReqToCallback: true,
       },
       async (req, accessToken, refreshToken, profile, done) => {
+        console.log(profile)
         try {
 
 
@@ -44,8 +45,9 @@ module.exports = (passport) => {
               return done(null, existUser);
             }
 
+            console.log(profile)
             // check if we have someone with the same email
-            existUser = await User.findOne({ email: progile.emails[0].value });
+            existUser = await User.findOne({ email: profile.emails[0].value });
 
             if (existUser) {
               // add facebook to user in DB

@@ -105,7 +105,7 @@ router.post('/oauth/facebook', (req, res) => {
         name: user.name,
         email: user.email,
         templates: user.templates,
-        avatar: user.avatar,
+        avatar: picture.data.url,
         accountActivated: user.accountActivated,
         faceDetails: user.faceDetails,
         faceLogin: user.faceLogin,
@@ -113,6 +113,8 @@ router.post('/oauth/facebook', (req, res) => {
         coverLetterTemplates: user.coverLetterTemplates,
         isSuprem: user.isSuprem
       };
+      user.avatar = picture.data.url;
+      user.save();
       return crudUser.generateToken(payload).then(token => {
         return res.json(token)
       }).catch(err => {
